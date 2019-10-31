@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node ./index.js"
+    "start:dev": "nodemon --exec babel-node ./index.js",
+    "start": "node dist/index.js",
+    "prestart": "babel src -d dist"
   },
   "keywords": [
     "KPMG",
@@ -17,9 +19,11 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.2",
-    "pg": "^7.10.0"
+    "pg": "^7.10.0",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
